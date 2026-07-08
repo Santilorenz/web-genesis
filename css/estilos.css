@@ -1,5 +1,6 @@
-/* VARIABLES
-*/
+
+/* VARIABLES */
+
 :root{
     --clr-primary: hsla(45, 30%, 87%, 0.842);
     --clr-secondy: hsl(48, 80%, 80%);
@@ -52,6 +53,135 @@ a.btn-whatsapp:hover,
 a.btn-whatsapp:active {
     background-color: var(--clr-secondy);
     color: var(--clr-control);
+}
+
+
+/* Seccion principal */
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 127, 80, 0.158);
+}
+
+.logo,img{
+    width: 310px;
+    margin-top: 15px;
+}
+
+.button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.btn-servicios,
+.btn-hablemos,
+.btn-seguinos,
+.btn-ubicacion{
+    background-color: rgba(248, 163, 52, 0.884);
+    box-shadow: 0 10px 25px rgb(212, 128, 17);
+    border-radius: 30px;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 16px;
+    font-size: 21px;
+    color: black;
+}
+
+a.btn-servicios:hover,
+a.btn-servicios:active {
+    background-color: burlywood;
+    color: black;
+}
+
+a.btn-hablemos:hover,
+a.btn-hablemos:active {
+    background-color: burlywood;
+    color: black;
+}
+
+a.btn-seguinos:hover,
+a.btn-seguinos:active {
+    background-color: burlywood;
+    color: black;
+}
+
+a.btn-ubicacion:hover,
+a.btn-ubicacion:active {
+    background-color: burlywood;
+    color: black;
+}
+
+/* page servicio */
+
+h1{
+    text-align: center;
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+.tarjetas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta-facial:hover,
+.tarjeta-facial:active {
+    background-color: rgb(222, 135, 135);
+    color: black;
+}
+.tarjeta-cejas:hover,
+.tarjeta-cejas:active {
+    background-color: rgb(222, 135, 135);
+    color: black;
+}
+.tarjeta-labios:hover,
+.tarjeta-labios:active {
+    background-color: rgb(222, 135, 135);
+    color: black;
+}
+
+.tarjeta-facial,
+.tarjeta-cejas,
+.tarjeta-labios{
+    background-color: rgb(221, 158, 158);
+    box-shadow: 5px 10px 25px rgb(228, 178, 178);
+    border-radius: 30px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    width: min(90%, 400px);
+    min-height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+.contenedor-img {
+    width: 180px;
+    height: 170px;
+    overflow: hidden;
+    flex-shrink: 0;
+    padding-top: 0;
+}
+
+.img-servicio {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: contain;
+    object-position: center;
 }
 
 

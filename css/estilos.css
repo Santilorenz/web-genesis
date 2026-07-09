@@ -2,11 +2,9 @@
 /* VARIABLES */
 
 :root{
-    --clr-primary: hsla(45, 30%, 87%, 0.842);
-    --clr-secondy: hsl(48, 80%, 80%);
-    --clr-neutral: hsl(44, 63%, 63%,);
-    --clr-boton: hsl(43, 95%, 43%);
-    --clr-control: hsl(46, 100%, 32%);
+    --clr-primary: rgb(222, 135, 135);
+    --clr-secondy: rgb(226, 169, 169);
+    --clr-neutral: rgb(140, 140, 140);
 }
 
 /* ESTILO GLOBAL */
@@ -18,54 +16,16 @@
 }
 
 body{
-    background-color: var(--clr-primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.button{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-a,button{
-    background-color: var(--clr-boton);
-    color: var(--clr-primary);
-    text-decoration: none;
-    text-align: center;
-    border: 0.1rem solid var(--clr-primary);
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-}
-
-a.btn-servicios:hover,
-a.btn-servicios:active {
-    background-color: var(--clr-secondy);
-    color: var(--clr-control);
-}
-
-a.btn-whatsapp:hover,
-a.btn-whatsapp:active {
-    background-color: var(--clr-secondy);
-    color: var(--clr-control);
 }
 
 
 /* Seccion principal */
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(255, 127, 80, 0.158);
-}
 
-.logo,img{
+.logo img{
     width: 310px;
     margin-top: 15px;
 }
@@ -80,11 +40,11 @@ body{
 }
 
 .btn-servicios,
-.btn-hablemos,
-.btn-seguinos,
+.btn-whatsapp,
+.btn-ig,
 .btn-ubicacion{
-    background-color: rgba(248, 163, 52, 0.884);
-    box-shadow: 0 10px 25px rgb(212, 128, 17);
+    background-color: var(--clr-secondy);
+    box-shadow: 0 10px 25px var(--clr-primary);
     border-radius: 30px;
     text-decoration: none;
     box-sizing: border-box;
@@ -95,25 +55,25 @@ body{
 
 a.btn-servicios:hover,
 a.btn-servicios:active {
-    background-color: burlywood;
+    background-color: var(--clr-primary);
     color: black;
 }
 
-a.btn-hablemos:hover,
-a.btn-hablemos:active {
-    background-color: burlywood;
+a.btn-whatsapp:hover,
+a.btn-whatsapp:active {
+    background-color: var(--clr-primary);
     color: black;
 }
 
-a.btn-seguinos:hover,
-a.btn-seguinos:active {
-    background-color: burlywood;
+a.btn-ig:hover,
+a.btn-ig:active {
+    background-color: var(--clr-primary);
     color: black;
 }
 
 a.btn-ubicacion:hover,
 a.btn-ubicacion:active {
-    background-color: burlywood;
+    background-color: var(--clr-primary);
     color: black;
 }
 
@@ -136,25 +96,25 @@ h2 {
 
 .tarjeta-facial:hover,
 .tarjeta-facial:active {
-    background-color: rgb(222, 135, 135);
+    background-color: var(--clr-primary);
     color: black;
 }
 .tarjeta-cejas:hover,
 .tarjeta-cejas:active {
-    background-color: rgb(222, 135, 135);
+    background-color: var(--clr-primary);
     color: black;
 }
 .tarjeta-labios:hover,
 .tarjeta-labios:active {
-    background-color: rgb(222, 135, 135);
+    background-color: var(--clr-primary);
     color: black;
 }
 
 .tarjeta-facial,
 .tarjeta-cejas,
 .tarjeta-labios{
-    background-color: rgb(221, 158, 158);
-    box-shadow: 5px 10px 25px rgb(228, 178, 178);
+    background-color: var(--clr-secondy);
+    box-shadow: 5px 10px 25px var(--clr-neutral);
     border-radius: 30px;
     text-decoration: none;
     color: black;

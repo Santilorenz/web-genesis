@@ -31,7 +31,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 25px;
-    margin-top: 25px;
+    margin-top: 15px;
     width: 80%;
 }
 
@@ -91,17 +91,21 @@ a.btn-ubicacion:active {
 
 h1{
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
+    padding: 20px;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+    padding: 20px;
 }
 
 .tarjetas{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    gap: 10px;
 }
 
 .tarjeta-facial:hover,
@@ -134,7 +138,7 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     margin: 20px;
 }
 
@@ -167,4 +171,23 @@ h2 {
     .contenedor{
         width: 90%;
     }
+}
+
+.btn-volver{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    background-color: var(--clr-secondy);
+    box-shadow: 0 10px 25px var(--clr-primary);
+    border-radius: 30px;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 15px;
+    color: black;
+    border: none;
+    cursor: pointer;
 }

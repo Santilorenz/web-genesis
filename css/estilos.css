@@ -5,6 +5,7 @@
     --clr-primary: rgb(222, 135, 135);
     --clr-secondy: rgb(226, 169, 169);
     --clr-neutral: rgb(140, 140, 140);
+    --clr-footer: rgb(253, 195, 195);
 }
 
 /* ESTILO GLOBAL */
@@ -158,21 +159,6 @@ h2 {
     object-position: center;
 }
 
-
-@media (min-width: 768px) {
-    .tarjetas{
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .contenedor{
-        width: 90%;
-    }
-}
-
 .btn-volver{
     display: flex;
     justify-content: center;
@@ -191,3 +177,26 @@ button{
     border: none;
     cursor: pointer;
 }
+
+footer.footer {
+    background-color: var(--clr-footer);
+    text-align: center;
+    padding: 10px;
+    margin-top: 25px;
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .tarjetas{
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contenedor{
+        width: 90%;
+    }
+}
+

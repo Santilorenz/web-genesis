@@ -31,14 +31,12 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 25px;
-    margin-top: 15px;
     width: 80%;
 }
 
 .logo img{
     width: 310px;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 .button{
@@ -47,7 +45,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 25px;
-    margin-top: 25px;
+    margin-top: 5px;
 }
 
 .btn-servicios,

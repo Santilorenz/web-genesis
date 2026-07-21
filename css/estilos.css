@@ -60,7 +60,7 @@ body{
     text-decoration: none;
     box-sizing: border-box;
     padding: 16px;
-    font-size: (1rem, 1.5rem, 2rem);
+    font-size: clamp(1rem, 4vw, 1.4rem);
     width: min(100%, 380px);
     color: black;
 }
@@ -95,12 +95,12 @@ h2 {
 }
 */
 h1{
-    font-size:(2rem,4vw,3.5rem);
+    font-size: clamp(2rem, 4vw, 3.5rem);
     padding: 20px;
 }
 
 h2{
-    font-size:(1.3rem,2vw,2rem);
+    font-size: clamp(1.3rem, 2vw, 2rem);
     padding: 10px;
 }
 .tarjetas{
@@ -132,7 +132,7 @@ h2{
     text-decoration: none;
     color: black;
     text-align: center;
-    width: (100%);
+    width: 100%;
     max-width: 400px;
     display: flex;
     justify-self: center;
@@ -211,19 +211,20 @@ footer.footer {
 }
 */
 
+/* Media Queries */
 /* Tablet */
-@media (min-width:768px){
+@media (min-width:368px){
     .button{
         gap:30px;
     }
     .contenedor{
-        width:90%;
+        width:50%;
     }
 }
 
 /* Notebook */
 
-@media (min-width:992px){
+@media (min-width:792px){
     .button{
         flex-direction:row;
         flex-wrap:wrap;
@@ -237,3 +238,6 @@ footer.footer {
         max-width:1200px;
     }
 }
+
+
+

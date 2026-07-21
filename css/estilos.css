@@ -5,7 +5,7 @@
     --clr-primary: rgb(222, 135, 135);
     --clr-secondy: rgb(226, 169, 169);
     --clr-neutral: rgb(140, 140, 140);
-    --clr-footer: rgb(253, 195, 195);
+    --clr-footer: rgb(252, 207, 207);
 }
 
 /* ESTILO GLOBAL */
@@ -16,11 +16,24 @@
     font-family: 'Poppins', sans-serif;
 }
 
+html{
+    overflow-x: hidden;
+}
+
 body{
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 16px;
 }
 
 
@@ -62,6 +75,7 @@ body{
     padding: 16px;
     font-size: clamp(1rem, 4vw, 1.4rem);
     width: min(100%, 380px);
+    text-align: center;
     color: black;
 }
 
@@ -82,20 +96,10 @@ body{
 
 /* PAGINA SERVICIOS */
 
-/*
+
 h1{
     text-align: center;
-    font-size: 2rem;
-    padding: 20px;
-}
-
-h2 {
-    font-size: 1.5rem;
-    padding: 20px;
-}
-*/
-h1{
-    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-size: clamp(2rem, 4vw, 3rem);
     padding: 20px;
 }
 
@@ -103,11 +107,16 @@ h2{
     font-size: clamp(1.3rem, 2vw, 2rem);
     padding: 10px;
 }
+
 .tarjetas{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 10px;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 .tarjeta-facial,
@@ -135,6 +144,7 @@ h2{
     width: 100%;
     max-width: 400px;
     display: flex;
+    flex-direction: column;
     justify-self: center;
     align-items: center;
     padding: 10px;
@@ -158,10 +168,29 @@ h2{
     display: block;
 }
 
+.detalle-texto{
+    max-width: 700px;
+    text-align: center;
+    padding: 0 10px 20px;
+    line-height: 1.5;
+}
+
+.img-detalle{
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 5px 10px 25px var(--clr-neutral);
+    margin: 10px auto 20px;
+    display: block;
+}
+
 .btn-volver{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 20px;
+    text-decoration: none;
 }
 
 button{
@@ -195,39 +224,59 @@ footer.footer {
     width: 100%;
 }
 
-/*
-@media (min-width: 768px) {
-    .tarjetas{
-        flex-direction: column;
-        justify-content: center;
+footer.footer p {
+    margin: 0;
+    font-size: 14px;
+    color: black;
+}
+
+/* Media Queries (mobile-first) */
+
+/* Pantallas muy chicas (celulares angostos, <360px) */
+
+@media (max-width:360px){
+    .logo img{
+        max-width:220px;
+    }
+    .btn-servicios,
+    .btn-whatsapp,
+    .btn-ig,
+    .btn-ubicacion{
+        padding:10px;
+    }
+}
+
+/* Tablet vertical en adelante */
+
+@media (min-width:600px){
+    .button{
         gap: 20px;
     }
-}
-
-@media (max-width: 768px) {
     .contenedor{
-        width: 90%;
+        width:80%;
     }
-}
-*/
-
-/* Media Queries */
-/* Tablet */
-@media (min-width:368px){
-    .button{
-        gap:30px;
-    }
-    .contenedor{
-        width:50%;
+    .tarjeta-facial,
+    .tarjeta-cejas,
+    .tarjeta-labios{
+        flex-direction:row;
+        max-width:auto;
     }
 }
 
-/* Notebook */
+/* Tablet horizontal / Notebook */
 
 @media (min-width:792px){
+    .contenedor{
+        width:70%;
+    }
     .button{
         flex-direction:row;
         flex-wrap:wrap;
+    }
+    .tarjetas{
+        flex-direction:row;
+        flex-wrap:wrap;
+        gap:15px;
     }
 }
 
@@ -236,8 +285,7 @@ footer.footer {
 @media (min-width:1200px){
     .contenedor{
         max-width:1200px;
+        width:90%;
     }
 }
-
-
 

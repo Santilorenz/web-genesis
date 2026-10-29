@@ -1,0 +1,575 @@
+/* =========================================================
+       1. RESET BÁSICO
+       Todos los navegadores traen márgenes/paddings distintos
+       por defecto. Los sacamos a todos para empezar parejo.
+       box-sizing: border-box hace que el padding y el border
+       se cuenten DENTRO del ancho del elemento (así no se rompen
+       los cálculos de layout).
+       ========================================================= */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+ 
+    /* =========================================================
+       2. VARIABLES CSS (custom properties)
+       Guardamos acá los colores y valores que se repiten,
+       así si mañana querés cambiar el rosa principal, lo cambiás
+       en un solo lugar y se actualiza en todo el sitio.
+       ========================================================= */
+    :root {
+      --rosa-principal: #C08A8E;   /* botones, acentos */
+      --rosa-oscuro: #A9666C;      /* hover de botones */
+      --rosa-suave: #F3D9D6;       /* fondos suaves, íconos */
+      --rosa-fondo: #FBF1EE;       /* fondo general del sitio */
+      --texto-oscuro: #3B2E2E;     /* texto principal */
+      --texto-gris: #6E5C5C;       /* texto secundario */
+      --blanco: #FFFFFF;
+ 
+      --fuente-titulo: 'Caveat', cursive;   /* letra "escrita a mano" */
+      --fuente-texto: 'Poppins', sans-serif; /* letra normal */
+ 
+      --radio-borde: 14px; /* redondeo que usamos en tarjetas/botones */
+    }
+ 
+    body {
+      font-family: var(--fuente-texto);
+      color: var(--texto-oscuro);
+      background: var(--rosa-fondo);
+      line-height: 1.5;
+    }
+ 
+    img {
+      max-width: 100%;   /* ninguna imagen se desborda de su contenedor */
+      display: block;
+    }
+ 
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+ 
+    ul {
+      list-style: none;
+    }
+ 
+    /* Contenedor central: limita el ancho máximo del contenido
+       y lo centra, dejando "aire" a los costados en pantallas grandes */
+    .contenedor {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+ 
+    /* Título de sección tipo "Bienvenidas" con estilo manuscrito */
+    .titulo-manuscrito {
+      font-family: var(--fuente-titulo);
+      color: var(--texto-oscuro);
+      font-weight: 700;
+    }
+ 
+    /* Pequeña etiqueta en mayúsculas que va arriba de cada título de sección
+       (ej: "NUESTROS SERVICIOS", "GALERÍA") */
+    .etiqueta {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: var(--rosa-oscuro);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+ 
+    /* Botón reutilizable (lo usamos en "Reservar turno", "Ver promociones", etc.) */
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--rosa-principal);
+      color: var(--blanco);
+      padding: 12px 24px;
+      border: none;
+      border-radius: 30px;
+      font-family: var(--fuente-texto);
+      font-size: 0.95rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.25s ease; /* transición suave al pasar el mouse */
+    }
+    .boton:hover {
+      background: var(--rosa-oscuro);
+    }
+ 
+    /* =========================================================
+       3. HEADER / NAVEGACIÓN
+       ========================================================= */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 24px;
+      background: var(--blanco);
+    }
+ 
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-imagen {
+      width: 100px;
+      height: auto;
+    }
+    /*
+    .logo h1 {
+      font-family: var(--fuente-titulo);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    .logo span {
+      display: block;
+      font-family: var(--fuente-texto);
+      font-size: 0.6rem;
+      letter-spacing: 2px;
+      color: var(--texto-gris);
+    }
+    */
+    /* Menú de navegación: flex en fila, con separación entre links */
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-size: 0.95rem;
+    }
+    .nav-links a.activo {
+      border-bottom: 2px solid var(--texto-oscuro);
+      padding-bottom: 4px;
+    }
+ 
+    .header-derecha {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+ 
+    /* Este botón de hamburguesa está oculto en escritorio.
+       Solo aparece en pantallas chicas (ver media query al final) */
+    .menu-hamburguesa {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .menu-hamburguesa span {
+      width: 26px;
+      height: 3px;
+      background: var(--texto-oscuro);
+      border-radius: 2px;
+    }
+ 
+    /* =========================================================
+       4. HERO (sección principal con la foto grande)
+       ========================================================= */
+    .hero {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(120deg, #F6D8D4, #E9BFC2);
+    }
+ 
+    /* Imagen de fondo del hero. En un proyecto real acá va la foto
+       real de la modelo con la crema facial (<img> o background-image) */
+    .hero-imagen {
+      position: absolute;
+      inset: 0; /* ocupa top/right/bottom/left: 0 */
+      background: linear-gradient(120deg, #F1C9C6 20%, #E3A9AC 100%);
+      z-index: 0;
+    }
+ 
+    .hero-contenido {
+      position: relative;
+      z-index: 1;
+      max-width: 560px;
+      padding: 60px 24px;
+      color: var(--texto-oscuro);
+    }
+ 
+    .hero-contenido p.copete {
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+ 
+    .hero-titulo {
+      font-size: 4.5rem;
+      line-height: 0.9;
+      margin-bottom: 16px;
+    }
+ 
+    .hero-contenido .descripcion {
+      font-size: 1rem;
+      color: var(--texto-gris);
+      margin-bottom: 28px;
+      max-width: 380px;
+    }
+ 
+    /* =========================================================
+       5. SECCIÓN "NUESTROS SERVICIOS"
+       ========================================================= */
+    .servicios {
+      padding: 60px 0 40px;
+    }
+ 
+    .servicios-titulo-fila {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+ 
+    .servicios-titulo-fila h2 {
+      font-size: 2.4rem;
+    }
+ 
+    .link-ver-mas {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--texto-oscuro);
+      white-space: nowrap;
+    }
+ 
+    /* Grilla de 8 servicios: CSS Grid con columnas automáticas.
+       auto-fit + minmax hace que la cantidad de columnas se
+       adapte sola según el espacio disponible (clave del responsive) */
+    .grilla-servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+      gap: 24px;
+      text-align: center;
+    }
+ 
+    .servicio-item .icono-circulo {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      background: var(--rosa-suave);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 1.8rem;
+    }
+ 
+    .servicio-item p {
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+ 
+    /* =========================================================
+       6. BANNER "PROMOCIONES DEL MES"
+       ========================================================= */
+    .banner-promo {
+      margin: 40px auto;
+      background: linear-gradient(100deg, var(--rosa-principal), #D9A6A9);
+      border-radius: var(--radio-borde);
+      padding: 40px;
+      color: var(--blanco);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+ 
+    .banner-promo h3 {
+      font-family: var(--fuente-titulo);
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+ 
+    .banner-promo .boton {
+      background: var(--blanco);
+      color: var(--rosa-oscuro);
+    }
+    .banner-promo .boton:hover {
+      background: #f7e9e9;
+    }
+ 
+    .banner-promo-texto {
+      max-width: 340px;
+      font-size: 0.95rem;
+    }
+ 
+    /* =========================================================
+       7. GALERÍA
+       ========================================================= */
+    .galeria {
+      padding: 40px 0;
+    }
+ 
+    .grilla-galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+    }
+ 
+    .grilla-galeria .foto {
+      aspect-ratio: 1 / 1; /* fuerza a que cada foto sea un cuadrado */
+      border-radius: var(--radio-borde);
+      background: linear-gradient(135deg, #EBC9C6, #D9AFAE);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanco);
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 8px;
+    }
+ 
+    /* =========================================================
+       8. BANNER "COMBOS DISPONIBLES"
+       ========================================================= */
+    .banner-combos {
+      margin: 40px auto;
+      background: var(--rosa-suave);
+      border-radius: var(--radio-borde);
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 32px;
+      align-items: center;
+    }
+ 
+    .banner-combos h3 {
+      font-family: var(--fuente-titulo);
+      font-size: 2.2rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+    }
+ 
+    .banner-combos-lista {
+      font-size: 0.9rem;
+    }
+    .banner-combos-lista li {
+      margin-bottom: 8px;
+    }
+    .banner-combos-lista li::before {
+      content: "✓ ";
+      color: var(--rosa-oscuro);
+      font-weight: 700;
+    }
+ 
+    /* =========================================================
+       9. SECCIÓN "CONOCÉ NUESTRO ESPACIO"
+       ========================================================= */
+    .espacio {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 0;
+      margin: 40px 0;
+      border-radius: var(--radio-borde);
+      overflow: hidden;
+    }
+ 
+    .espacio-imagen {
+      min-height: 320px;
+      background: linear-gradient(135deg, #D9C7B8, #B9A48F);
+    }
+ 
+    .espacio-texto {
+      background: var(--rosa-suave);
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+ 
+    .espacio-texto h2 {
+      font-family: var(--fuente-titulo);
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+    }
+ 
+    .espacio-texto p {
+      color: var(--texto-gris);
+      margin-bottom: 20px;
+      max-width: 380px;
+    }
+ 
+    /* =========================================================
+       10. SECCIÓN "PRODUCTOS"
+       ========================================================= */
+    .productos {
+      padding: 40px 0 60px;
+    }
+ 
+    .grilla-productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+      padding: 5px;
+    }
+ 
+    .producto-card {
+      background: var(--blanco);
+      border-radius: var(--radio-borde);
+      overflow: hidden;
+      text-align: center;
+      border: 1px solid #070707;
+      overflow: hidden;
+    }
+ 
+    .producto-card .imagen-producto {
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(160deg, #F1E4DC, #E3CFC2);
+    }
+ 
+    .producto-card p {
+      padding: 14px 10px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      background: var(--rosa-suave);
+    }
+
+    .imagen-producto {
+      width: auto;
+      height: auto;
+      object-fit: cover;
+    }
+ 
+    /* =========================================================
+       11. FOOTER
+       ========================================================= */
+    .footer {
+      background: var(--rosa-suave);
+      padding: 50px 0 24px;
+    }
+ 
+    .grilla-footer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+ 
+    .footer-item h4 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+    .footer-item p {
+      font-size: 0.85rem;
+      color: var(--texto-gris);
+      margin-bottom: 12px;
+    }
+    .footer-item .boton {
+      padding: 8px 18px;
+      font-size: 0.85rem;
+    }
+ 
+    .footer-firma {
+      text-align: center;
+      font-family: var(--fuente-titulo);
+      font-size: 1.4rem;
+      border-top: 1px solid #E7D2CD;
+      padding-top: 20px;
+    }
+ 
+    /* =========================================================
+       12. RESPONSIVE — TABLET (pantallas de hasta 900px)
+       A partir de acá "achicamos" cosas: tamaños de letra,
+       pasamos de 2 columnas a 1 en algunos bloques, etc.
+       ========================================================= */
+    @media (max-width: 900px) {
+      .espacio {
+        grid-template-columns: 1fr; /* la foto y el texto se apilan */
+      }
+      .espacio-imagen {
+        min-height: 240px;
+      }
+      .banner-combos {
+        grid-template-columns: 1fr; /* ídem acá */
+      }
+      .hero-titulo {
+        font-size: 3.4rem;
+      }
+    }
+ 
+    /* =========================================================
+       13. RESPONSIVE — CELULAR (pantallas de hasta 640px)
+       Acá es donde más cambia la estructura: el menú de
+       navegación se convierte en botón de hamburguesa,
+       y los textos/botones se acomodan en columna.
+       ========================================================= */
+    @media (max-width: 640px) {
+ 
+      /* Ocultamos el menú horizontal y el botón grande de reservar,
+         y mostramos la hamburguesa en su lugar */
+      .nav-links {
+        display: none;
+      }
+      .header-derecha .boton {
+        display: none;
+      }
+      .menu-hamburguesa {
+        display: flex;
+      }
+ 
+      .hero {
+        min-height: 420px;
+        text-align: left;
+      }
+      .hero-titulo {
+        font-size: 2.8rem;
+      }
+      .hero-contenido {
+        padding: 40px 20px;
+      }
+ 
+      .servicios-titulo-fila h2 {
+        font-size: 1.9rem;
+      }
+ 
+      /* En celular achicamos los íconos de servicios para que
+         entren 3 por fila en vez de 4 */
+      .grilla-servicios {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .servicio-item .icono-circulo {
+        width: 64px;
+        height: 64px;
+        font-size: 1.4rem;
+      }
+      .servicio-item p {
+        font-size: 0.78rem;
+      }
+ 
+      .servicios-titulo-fila {
+        padding: 5px;
+      }
+
+      .banner-promo {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 20px;
+      }
+ 
+      .grilla-galeria {
+        grid-template-columns: repeat(2, 1fr); /* 2 fotos por fila */
+      }
+ 
+      .banner-combos {
+        padding: 24px 20px;
+      }
+ 
+      .footer-firma {
+        font-size: 1.1rem;
+      }
+    }

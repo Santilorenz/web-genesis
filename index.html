@@ -1,35 +1,294 @@
 
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Centro de estética y cuidado personal, ofreciendo servicios de belleza y bienestar.">
-    <meta name="keywords" content="estética, belleza, cuidado personal, servicios de belleza, bienestar"> 
-    <title>Genesis | Web</title>
-    <link rel="icon" href="imagenes/logo-nuevo-removebg-preview.png" type="image/png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
+<meta charset="UTF-8">
+<!-- viewport: esto es OBLIGATORIO para que el responsive funcione en celulares -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vico Genesis</title>
+
+  <!-- Traemos dos tipografías de Google Fonts:
+       - "Playfair Display" para textos elegantes (no la usamos mucho acá)
+       - "Poppins" para el texto normal del sitio
+       - "Caveat" para el estilo "escrito a mano" que se ve en el título "Bienvenidas" -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Link del CSS -->
+<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    <div class="contenedor">  
-        <div class="logo">
-            <img src="imagenes/logo-nuevo-removebg-preview.png" class="logo" alt="logo Genesis">
-        </div>
-        <div class="button">
-            <a href="pages/servicios.html" class="btn-servicios">Servicios</a>
-            <a href="https://wa.me/5493534194218?text=Hola%2C%20quiero%20consultar%20por%20un%20turno" target="_blank" class="btn-whatsapp">Hablemos</a>
-            <a href="https://www.instagram.com/vicogenesis/" target="_blank" class="btn-ig">Seguinos</a>
-            <a href="https://maps.app.goo.gl/YEcPwQjjMJyxP1om8" target="_blank" class="btn-ubicacion">Ubicacion</a>
-        </div>
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="logo">
+      <!--<h1>Vico Genesis</h1>
+      <span>GABINETE ESTÉTICO</span>-->
+      <img src="/imagenes/logo.png" alt="logo genesis" class="logo-imagen">
     </div>
 
-    <footer class="footer">
-        <p>&copy; 2026 Genesis. Todos los derechos reservados.</p>
-    </footer>
+    <nav class="nav-links">
+      <a href="#inicio" class="activo">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#promociones">Promociones</a>
+      <a href="#galeria">Galería</a>
+      <a href="#productos">Productos</a>
+      <a href="#turnos">Turnos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+ 
+    <!-- <div class="header-derecha">
+      <a href="#" aria-label="Instagram">📷</a>
+      <a href="#" aria-label="WhatsApp">💬</a>
+      <a href="#turnos" class="boton">Reservar turno</a> -->
+ 
+      <!-- Botón hamburguesa: solo se ve en mobile (ver CSS responsive) -->
+      <button class="menu-hamburguesa" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+ 
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="inicio">
+    <!-- En un sitio real, reemplazá este div por:
+         <img class="hero-imagen" src="foto-facial.jpg" alt="Tratamiento facial"> -->
+    <div class="hero-imagen"></div>
+ 
+    <div class="contenedor">
+      <div class="hero-contenido">
+        <p class="copete">CUIDÁ TU PIEL, ES TU MEJOR CARTA DE PRESENTACIÓN</p>
+        <h2 class="hero-titulo titulo-manuscrito">Bienvenidos</h2>
+        <p class="descripcion">A nuestro espacio de belleza, bienestar y cuidado personal.</p>
+        <!--<a href="#turnos" class="boton">Reservar turno 💬</a>--> <!--NO LO VAMOS A USAR POR AHORA-->
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ SERVICIOS ============ -->
+  <section class="servicios contenedor" id="servicios">
+    <div class="servicios-titulo-fila">
+      <div>
+        <p class="etiqueta">NUESTROS SERVICIOS</p>
+        <h2 class="titulo-manuscrito">Tratamientos para cada necesidad</h2>
+      </div>
+      <a href="#" class="link-ver-mas">Ver todos los servicios →</a>
+    </div>
+ 
+    <!-- Repetimos la misma estructura (ícono + texto) para cada servicio.
+        Siempre el mismo "molde": .servicio-item -->
+    <div class="grilla-servicios">
+      <div class="servicio-item">
+        <div class="icono-circulo">🧖‍♀️</div>
+        <p>Faciales</p>
+      </div>
+      <div class="servicio-item">
+        <div class="icono-circulo">👁️</div>
+        <p>Lifting de pestañas</p>
+      </div>
+      <div class="servicio-item">
+        <div class="icono-circulo">💋</div>
+        <p>BB Lips</p>
+      </div>
+      <div class="servicio-item">
+        <div class="icono-circulo">💆‍♀️</div>
+        <p>Masajes</p>
+      </div>
+      <div class="servicio-item">
+        <div class="icono-circulo">🪒</div>
+        <p>Depilación con cera</p>
+      </div>
+      <div class="servicio-item">
+        <div class="icono-circulo">✨</div>
+        <p>Depilación definitiva</p>
+      </div>
+      <div class="servicio-item">
+        <div class="icono-circulo">🧴</div>
+        <p>Limpieza de espalda</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ BANNER PROMOCIONES ============ -->
+  <section class="contenedor" id="promociones">
+    <div class="banner-promo">
+      <h3 class="titulo-manuscrito">Promociones<br>del mes</h3>
+      <div class="banner-promo-texto">
+        <p>Combos y promos especiales para que te cuides más</p>
+        <br>
+        <a href="#" class="boton">Ver promociones →</a>
+      </div>
+      <p>Últimos turnos disponibles</p>
+    </div>
+  </section>
+ 
+  <!-- ============ GALERÍA ============ -->
+  <section class="galeria contenedor" id="galeria">
+    <div class="servicios-titulo-fila">
+      <div>
+        <p class="etiqueta">GALERÍA</p>
+        <h2 class="titulo-manuscrito">Resultados que se ven</h2>
+      </div>
+      <a href="#" class="link-ver-mas">Ver más fotos →</a>
+    </div>
+ 
+    <!-- Grilla de fotos. REEMPLAZAR cada div.foto por
+         <img src="..." alt="..."> con las fotos reales -->
+    <div class="grilla-galeria">
+      <div class="foto">Facial</div>
+      <div class="foto">Pestañas</div>
+      <div class="foto">BB Lips</div>
+      <div class="foto">Masajes</div>
+      <div class="foto">Espacio</div>
+      <div class="foto">Productos</div>
+    </div>
+  </section>
+ 
+  <!-- ============ BANNER COMBOS ============ -->
+  <section class="contenedor">
+    <div class="banner-combos">
+      <div>
+        <h3 class="titulo-manuscrito">Seguimos con las promociones</h3>
+        <p style="font-size:0.85rem; letter-spacing:1px; margin-bottom:16px;">COMBOS · SERVICIOS · BENEFICIOS</p>
+        <a href="#" class="boton">Ver combos →</a>
+      </div>
+      <div>
+        <p style="font-weight:600; margin-bottom:10px;">Combos disponibles:</p>
+        <ul class="banner-combos-lista">
+          <li>BB Lips + lifting de pestañas</li>
+          <li>Lifting de pestañas + diseño de cejas + BB Lips</li>
+          <li>Limpieza facial + masajes descontracturante</li>
+          <li>Perfilado de cejas + lifting de pestañas</li>
+          <li>Combo 5 laminado</li>
+          <li>Combo 6 limpieza espalda + masajes descontracturante</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ CONOCÉ NUESTRO ESPACIO ============ -->
+  <section class="contenedor">
+    <div class="espacio">
+      <div class="espacio-imagen"></div>
+      <div class="espacio-texto">
+        <p class="etiqueta">CONOCÉ NUESTRO ESPACIO</p>
+        <h2 class="titulo-manuscrito">Un lugar pensado para vos</h2>
+        <p>Un ambiente cálido, cómodo y seguro, donde cada detalle está pensado para que te relajes, te sientas bien y disfrutes de tu momento.</p>
+        <a href="#" class="boton">Conocé más →</a>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ PRODUCTOS ============ -->
+  <section class="productos contenedor" id="productos">
+    <div class="servicios-titulo-fila">
+      <div>
+        <p class="etiqueta">PRODUCTOS</p>
+        <h2 class="titulo-manuscrito">Llevate el cuidado a casa</h2>
+      </div>
+      <a href="productos.html" class="link-ver-mas">Ver todos los productos →</a>
+    </div>
+ 
+    <div class="grilla-productos">
+      <div class="producto-card">
+        <div class="imagen-producto">
+          <img src="/imagenes/crema-facial.webp" alt="crema facial" class="imagen-crema">
+        </div>
+        <p>Cremas faciales</p>
+      </div>
+      <div class="producto-card">
+        <div class="imagen-producto">
+          <img src="/imagenes/crema-corporal.png" alt="crema corporal" class="imagen-crema">
+        </div>
+        <p>Cremas corporales</p>
+      </div>
+      <div class="producto-card">
+        <div class="imagen-producto">
+          <img src="/imagenes/serum-facial-hialuronico.webp" alt="serum" class="imagen-serum">
+        </div>
+        <p>Sérums hidratantes</p>
+      </div>
+      <div class="producto-card">
+        <div class="imagen-producto">
+          <img src="/imagenes/protector-solar.webp" alt="protector solar" class="imagen-protector">
+        </div>
+        <p>Protector solar</p>
+      </div>
+      <div class="producto-card">
+        <div class="imagen-producto">
+          <img src="/imagenes/gel-activo-para-piernas.webp" alt="gel para circulación" class="imagen-gel">
+        </div>
+        <p>Gel para circulación</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contacto">
+    <div class="contenedor">
+      <div class="grilla-footer">
+        <div class="footer-item">
+          <h4>Turnos</h4>
+          <p>Escribinos por WhatsApp</p>
+          <a href="#" class="boton">Contactanos →</a>
+        </div>
+        <div class="footer-item">
+          <h4>Seguinos en Instagram</h4>
+          <p>Enterate de novedades, promos y más</p>
+          <a href="#" class="boton">Ir al Instagram →</a>
+        </div>
+        <div class="footer-item">
+          <h4>Ubicación</h4>
+          <p>Estamos en tu zona</p>
+          <a href="#" class="boton">Ver ubicación →</a>
+        </div>
+        <div class="footer-item">
+          <h4>Horarios</h4>
+          <p>Lunes a Sábados<br>9:00 a 20:00 hs</p>
+        </div>
+      </div>
+      <p class="footer-firma">♡ Gracias por elegirnos ♡</p>
+    </div>
+  </footer>
+ 
+  <script>
+    // =========================================================
+    // 14. JAVASCRIPT: menú hamburguesa
+    // Cuando el usuario toca el botón de hamburguesa en mobile,
+    // mostramos u ocultamos el menú de navegación.
+    // =========================================================
+    const botonMenu = document.querySelector('.menu-hamburguesa');
+    const menuNav = document.querySelector('.nav-links');
+ 
+    botonMenu.addEventListener('click', function () {
+      // classList.toggle agrega la clase si no está, y la saca si ya está.
+      // Así con un solo click alternamos entre mostrar/ocultar.
+      menuNav.classList.toggle('nav-links-abierto');
+ 
+      // Truco simple: si tiene la clase "abierto", forzamos que se vea
+      // como bloque en columna (ya que por defecto está en display:none
+      // gracias al media query de celular).
+      if (menuNav.classList.contains('nav-links-abierto')) {
+        menuNav.style.display = 'flex';
+        menuNav.style.flexDirection = 'column';
+        menuNav.style.position = 'absolute';
+        menuNav.style.top = '70px';
+        menuNav.style.left = '0';
+        menuNav.style.right = '0';
+        menuNav.style.background = '#fff';
+        menuNav.style.padding = '20px 24px';
+        menuNav.style.gap = '16px';
+        menuNav.style.zIndex = '10';
+      } else {
+        menuNav.style.display = 'none';
+      }
+    });
+  </script>
+ 
 </body>
 </html>
 

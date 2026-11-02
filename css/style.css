@@ -99,6 +99,28 @@
       background: var(--rosa-oscuro);
     }
  
+    /* Botón de producto */
+    .boton-producto {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--rosa-principal);
+      color: var(--blanco);
+      padding: 8px 16px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      border: none;
+      border-radius: 30px;
+      font-family: var(--fuente-texto);
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.25s ease; /* transición suave al pasar el mouse */
+    }
+    .boton-producto:hover {
+      background: var(--rosa-oscuro);
+    }
+
     /* =========================================================
        3. HEADER / NAVEGACIÓN
        ========================================================= */

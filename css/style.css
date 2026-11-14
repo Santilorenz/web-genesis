@@ -143,25 +143,18 @@
       width: 100px;
       height: auto;
     }
-    /*
-    .logo h1 {
+    
+    .hero-contenido h1 {
       font-family: var(--fuente-titulo);
-      font-size: 1.8rem;
-      line-height: 1;
+      font-size: 4rem;
     }
-    .logo span {
-      display: block;
-      font-family: var(--fuente-texto);
-      font-size: 0.6rem;
-      letter-spacing: 2px;
-      color: var(--texto-gris);
-    }
-    */
+    
     /* Menú de navegación: flex en fila, con separación entre links */
     .nav-links {
       display: flex;
       gap: 28px;
       font-size: 0.95rem;
+      position: sticky;
     }
     .nav-links a.activo {
       border-bottom: 2px solid var(--texto-oscuro);

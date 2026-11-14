@@ -467,7 +467,33 @@
     }
  
     /* =========================================================
-       11. FOOTER
+       11. PAGINA "PRODUCTOS"
+       ========================================================= */
+     .titulo-pag-producto {
+      font-family: var(--fuente-titulo);
+      font-size: 2.2rem;
+      margin-bottom: 14px;
+      text-align: center;
+    }
+
+    .productos-body {
+      padding: 0px 0 60px;
+      background: white;
+    }
+
+    .header-productos {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 8px 24px;
+      background: var(--rosa-suave);
+    }
+
+
+
+    /* =========================================================
+       12. FOOTER
        ========================================================= */
     .footer {
       background: var(--rosa-suave);
@@ -504,7 +530,7 @@
     }
  
     /* =========================================================
-       12. RESPONSIVE — TABLET (pantallas de hasta 900px)
+       13. RESPONSIVE — TABLET (pantallas de hasta 900px)
        A partir de acá "achicamos" cosas: tamaños de letra,
        pasamos de 2 columnas a 1 en algunos bloques, etc.
        ========================================================= */
@@ -524,7 +550,7 @@
     }
  
     /* =========================================================
-       13. RESPONSIVE — CELULAR (pantallas de hasta 640px)
+       14. RESPONSIVE — CELULAR (pantallas de hasta 640px)
        Acá es donde más cambia la estructura: el menú de
        navegación se convierte en botón de hamburguesa,
        y los textos/botones se acomodan en columna.

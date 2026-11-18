@@ -39,7 +39,10 @@
 
   <section class="productos">
     <h2 class="titulo-pag-producto">Productos para tu piel</h2>
-        <div class="grilla-pag-productos">
+    <div class="productos-carousel">
+      <button class="carousel-controles carousel-anterior" type="button" aria-label="Ver productos anteriores">←</button>
+      <div class="carousel-viewport">
+        <div class="grilla-pag-productos" id="carousel-productos">
         <div class="producto-card">
             <div class="imagen-producto">
                 <img src="imagenes/crema-facial.webp" alt="crema facial" class="imagen-crema">
@@ -99,7 +102,12 @@
         <a href="https://wa.me/3534063489?text=Hola%21%20%F0%9F%98%8A%20Quisiera%20comprar%20el%20siguiente%20producto%3A%0A%0AProducto%3A%20Locion%20Higiene%20Activa%0ADescripcion%3A%20Locion%20Higiene%20Activa%20para%20el%20cuidado%20diario%20de%20la%20piel.%0APrecio%3A%20%2415.000%0A%0A%C2%BFMe%20podrian%20brindar%20mas%20informacion%3F%20Gracias%21"" target="_blank" class="boton-producto">Consultar →</a>
       </div>
 
+        </div>
+      </div>
+      <button class="carousel-controles carousel-siguiente" type="button" aria-label="Ver productos siguientes">→</button>
     </div>
-    
+  </section>
+
+  <script src="js/productos.js" defer></script>
 </body>
 </html>

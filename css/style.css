@@ -509,6 +509,7 @@
 
     .grilla-pag-productos .producto-card {
       width: 250px;
+      height: 350px;
       flex: 0 0 250px;
       scroll-snap-align: start;
     }
@@ -524,7 +525,7 @@
     .grilla-pag-productos .imagen-producto img {
       width: 100%;
       height: 100%;
-      object-fit: contain;
+      object-fit: cover;
     }
 
     .carousel-controles {
